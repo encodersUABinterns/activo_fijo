@@ -74,7 +74,6 @@ public void llenar_combo_cuentas(){
         jLabel15 = new javax.swing.JLabel();
         btnregistrar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,6 +98,11 @@ public void llenar_combo_cuentas(){
         jLabel7.setText("CUENTA");
 
         cbcuentas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbcuentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbcuentasActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("AREA");
 
@@ -217,13 +221,6 @@ public void llenar_combo_cuentas(){
 
         jLabel14.setText("REGISTRO DE ACTIVOS");
 
-        jButton1.setText("Prueba");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -273,10 +270,7 @@ public void llenar_combo_cuentas(){
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(240, 240, 240)
-                        .addComponent(jLabel14))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jButton1)))
+                        .addComponent(jLabel14)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -315,9 +309,7 @@ public void llenar_combo_cuentas(){
                         .addGap(42, 42, 42)
                         .addComponent(btnregistrar))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(122, 122, 122))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -325,14 +317,16 @@ public void llenar_combo_cuentas(){
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -368,12 +362,7 @@ public void llenar_combo_cuentas(){
          registrararea2();
          registrzr_Subareas();
          
-        //JOptionPane.showMessageDialog(this, "El codigo es:"+ac.SERIE(orden, cmp3, comp4, comp5));
-//<<<<<<< HEAD
-//        conexion.registrar_Activo(cbcuentas, ac.SERIE(orden, cmp3, comp4, comp5), txtequipo,txtcantidad, jDateChooser1, jDateChooser2, txtcosto,depres, cod_cuenta);
-//=======
-//      conexion.registrar_Activo(cbcuentas, ac.SERIE(orden, cmp3, comp4, comp5), txtequipo,txtcantidad, jDateChooser1, jDateChooser2, txtcosto,depres, cod_cuenta);
-//>>>>>>> origin/master
+        
          }
         catch(Exception e){
          JOptionPane.showMessageDialog(this, "error augusto"+e);
@@ -422,14 +411,9 @@ public void llenar_combo_cuentas(){
     if ((c < 'a' || c> 'z')&& (c < 'A' || c> 'Z')) evt.consume();
     }//GEN-LAST:event_txtareaKeyTyped
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      try{
-          conexion.conectar();
-        //conexion.registrar(txtequipo, txtarea, txtsiglafacult);
-        //conexion.cierraConexion();
-      }
-      catch(Exception e){JOptionPane.showMessageDialog(this, e);}
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void cbcuentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbcuentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbcuentasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -466,7 +450,6 @@ public void llenar_combo_cuentas(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrar;
     private javax.swing.JComboBox cbcuentas;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
