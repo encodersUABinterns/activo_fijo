@@ -14,29 +14,41 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class conexion {
-//String driver = "org.postgresql.Driver"; 
-//String connectString = "jdbc:postgresql://10.35.9.201:5432/devel/"; // ACA PONE DONDE ESTA TU BASE DE DATOS 
-//String user = "USUARIO"; 
-//String password = "PASSWORD"; 
+  public String db="Activo_Fijo";
+    public String url="jdbc:postgresql://192.168.1.125:5432/" +db;
+    public String user="postgres";
+    public String pass="DTICSW15";
     public Connection conexion = null;
-    
-    public void conectar()
-    {
-        if (conexion != null)
-        {
-            return;
-        }
-        String cadena = "jdbc:postgresql://192.168.1.125:5432/Activo_Fijo";
-        String password = "DTICSW15.";
-        String user = "postgres";
+
+    public conexion() {
+    }
+    public Connection conectar(){
+        Connection link=null;
+        
         try {
             Class.forName("org.postgresql.Driver");
-            conexion = DriverManager.getConnection(cadena,user,password);
+            link=DriverManager.getConnection(this.url, this.user, this.pass);
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
         }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e.getMessage());
-        }
+        
+        return link;
     }
+//    public void conectar()
+//    {
+//        String cadena = "jdbc:postgresql://192.168.1.125:5432/Activo_Fijo";
+//        String password = "DTICSW15.";
+//        String user = "postgres";
+//        try {
+//            Class.forName("org.postgresql.Driver");
+//            conexion = DriverManager.getConnection(cadena,user,password);
+//        }
+//        catch (Exception e) {
+//            JOptionPane.showMessageDialog(null,e.getMessage());
+//        }
+//    }
 public void cierraConexion()
     {
         try

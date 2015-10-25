@@ -5,6 +5,10 @@
  */
 package Datos;
 
+import java.util.Date;
+
+
+
 /**
  *
  * @author Blady
@@ -15,13 +19,13 @@ public class vActivo {
     private String codigo;
     private String descripcion;
     private int cant;
-    private String fecha_adq;
-    private String fecha_registro;
+    private Date fecha_adq;
+    private Date fecha_registro;
     private double costo_adq;
     private double depresiacion;
     private int id_cuenta;
 
-    public vActivo(int id_activo, String cuenta, String codigo, String descripcion, int cant, String fecha_adq, String fecha_registro, double costo_adq, double depresiacion, int id_cuenta) {
+    public vActivo(int id_activo, String cuenta, String codigo, String descripcion, int cant, Date fecha_adq, Date fecha_registro, double costo_adq, double depresiacion, int id_cuenta) {
         this.id_activo = id_activo;
         this.cuenta = cuenta;
         this.codigo = codigo;
@@ -77,19 +81,19 @@ public class vActivo {
         this.cant = cant;
     }
 
-    public String getFecha_adq() {
+    public Date getFecha_adq() {
         return fecha_adq;
     }
 
-    public void setFecha_adq(String fecha_adq) {
+    public void setFecha_adq(Date fecha_adq) {
         this.fecha_adq = fecha_adq;
     }
 
-    public String getFecha_registro() {
+    public Date getFecha_registro() {
         return fecha_registro;
     }
 
-    public void setFecha_registro(String fecha_registro) {
+    public void setFecha_registro(Date fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
 

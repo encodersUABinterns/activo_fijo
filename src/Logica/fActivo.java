@@ -7,7 +7,10 @@ package Logica;
 
 //import java.sql.Connection;
 
+import Datos.vActivo;
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -29,6 +32,8 @@ public class fActivo {
   private String sSQL="";
   public Integer totalregistro;
   
+  
+  
 public DefaultTableModel mostrar(String buscar) throws SQLException
 {
     DefaultTableModel modelo;
@@ -38,7 +43,7 @@ public DefaultTableModel mostrar(String buscar) throws SQLException
     String [] registro =new String [10];
     totalregistro = 0;
     modelo= new DefaultTableModel(null,titulos);
-    sSQL=("Select* from t_activos");
+    sSQL=("Select* from t_activos where cuenta like '%"+ buscar + "%' order by id_activo desc");
     try
     {
         Statement st= cn.createStatement();
@@ -70,5 +75,38 @@ public DefaultTableModel mostrar(String buscar) throws SQLException
     
     
 }
+public boolean insertar (vActivo dts){
+       sSQL="insert into t_activos (cuenta,codigo,descripcion,cant,fecha_adq,fecha_registro,costo_adq,depresiacion,id_cuenta)" +
+               "values (?,?,?,?,?,?,?,?,?)";
+       try {
+           
+           PreparedStatement pst=cn.prepareStatement(sSQL);
+           pst.setString(2, dts.getCuenta());
+           pst.setString(3, dts.getCodigo());
+           pst.setString(4, dts.getDescripcion());
+           pst.setInt(5, dts.getCant());
+           pst.setDate(6, (Date) dts.getFecha_adq());
+           pst.setDate(7, (Date)dts.getFecha_registro());
+           pst.setDouble(8, dts.getCosto_adq());
+           pst.setDouble(9, dts.getDepresiacion());
+           pst.setInt(10, dts.getId_cuenta());
+           
+           
+           int n=pst.executeUpdate();
+           
+           if (n!=0){
+               return true;
+           }
+           else {
+               return false;
+           }
+           
+           
+           
+       } catch (Exception e) {
+           JOptionPane.showConfirmDialog(null, e);
+           return false;
+       }
+   }
     
 }

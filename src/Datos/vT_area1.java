@@ -56,5 +56,7 @@ public class vT_area1 {
     public void setId_cuenta(int id_cuenta) {
         this.id_cuenta = id_cuenta;
     }
+
+   
     
 }
