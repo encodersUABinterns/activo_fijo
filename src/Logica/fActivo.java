@@ -58,9 +58,9 @@ public DefaultTableModel mostrar(String buscar) throws SQLException
                 registro [4] = rs.getString("cant");
                 registro [5] = rs.getString("fecha_adq");
                 registro [6] = rs.getString("fecha_registro");
-                registro [7] = rs.getString("id_activo");
-                registro [8] = rs.getString("id_activo");
-                registro [9] = rs.getString("id_activo");
+                registro [7] = rs.getString("costo_adq");
+                registro [8] = rs.getString("depresiacion");
+                registro [9] = rs.getString("id_cuenta");
                 
                 totalregistro=totalregistro+1;
                 modelo.addRow(registro);
@@ -81,18 +81,18 @@ public boolean insertar (vActivo dts){
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(2, dts.getCuenta());
-           pst.setString(3, dts.getCodigo());
-           pst.setString(4, dts.getDescripcion());
-           pst.setInt(5, dts.getCant());
-           pst.setDate(6, (Date) dts.getFecha_adq());
-           pst.setDate(7, (Date)dts.getFecha_registro());
-           pst.setDouble(8, dts.getCosto_adq());
-           pst.setDouble(9, dts.getDepresiacion());
-           pst.setInt(10, dts.getId_cuenta());
+           pst.setString(1, dts.getCuenta());
+           pst.setString(2, dts.getCodigo());
+           pst.setString(3, dts.getDescripcion());
+           pst.setInt(4, dts.getCant());
+           pst.setDate(5, (Date) dts.getFecha_adq());
+           pst.setDate(6, (Date)dts.getFecha_registro());
+           pst.setDouble(7, dts.getCosto_adq());
+           pst.setDouble(8, dts.getDepresiacion());
+           pst.setInt(9, dts.getId_cuenta());
            
            
-           int n=pst.executeUpdate();
+           int n =pst.executeUpdate();
            
            if (n!=0){
                return true;
