@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Angel%20Raldes/Desktop/Repositorio%20Activos%20Fijos/activo_fijo/src/Logica/conexion.java</file>
             <file>file:/C:/Users/Angel%20Raldes/Desktop/Repositorio%20Activos%20Fijos/activo_fijo/src/Presentacion/frmActivo.java</file>
@@ -18,8 +16,5 @@
             <file>file:/C:/Users/Angel%20Raldes/Desktop/Repositorio%20Activos%20Fijos/activo_fijo/src/Datos/vT_cuentas.java</file>
             <file>file:/C:/Users/Angel%20Raldes/Desktop/Repositorio%20Activos%20Fijos/activo_fijo/src/Logica/fT_cuentas.java</file>
         </group>
-=======
-        <group/>
->>>>>>> origin/master
     </open-files>
 </project-private>
